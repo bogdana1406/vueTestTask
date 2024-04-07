@@ -1,3 +1,20 @@
+<script setup>
+import { ElMessage, ElMessageBox } from 'element-plus'
+
+const open = () => {
+  ElMessageBox.alert('Your purchase is successful', 'Сongratulations', {
+    // if you want to disable its autofocus
+    // autofocus: false,
+    confirmButtonText: 'OK',
+    callback: (action) => {
+      ElMessage({
+        type: 'info',
+        message: `action: ${action}`,
+      })
+    },
+  })
+}
+</script>
 <script>
 export default {
   props: {
@@ -8,10 +25,10 @@ export default {
   },
   data() {
     return {
-      rows: 5, // Number of rows in the cinema
-      columns: 10, // Number of columns in the cinema
-      selectedSeats: [], // Array to store selected seats (format: [{ row: number, column: number }])
-      seatPrice: 50, // Price per seat
+      rows: 5,
+      columns: 10,
+      selectedSeats: [],
+      seatPrice: 50,
     };
   },
   computed: {
@@ -63,18 +80,18 @@ export default {
         </tr>
       </tbody>
     </table>
-    </div>
-    <div class="chosen-seats">
-  <h2>Chosen Seats</h2>
-  <table class="chosen-table">
-    <thead>
-      <tr>
+  </div>
+  <div class="chosen-seats">
+    <h2>Chosen Seats</h2>
+    <table class="chosen-table">
+      <thead>
+        <tr>
         <th>Row</th>
         <th>Column</th>
         <th colspan="2">Price</th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <tr v-if="selectedSeats.length === 0">
         <td colspan="3">No seats chosen yet</td>
       </tr>
@@ -82,13 +99,13 @@ export default {
         <td>{{ seat.row + 1 }}</td>
         <td>{{ String.fromCharCode(65 + seat.column) }}</td>
         <td>{{ seatPrice }}</td>
-        <td><button @click="unselectSeat(index)">Unselect</button></td>
+        <td><button class="unselected-btn" @click="unselectSeat(index)">X</button></td>
       </tr>
       <tr v-if="selectedSeats.length !== 0">
         <td colspan="3">
           Unselect All 
         </td>
-        <td><button @click="unselectAllSeats">Unselect All</button></td>
+        <td><button class="unselected-btn" @click="unselectAllSeats">X</button></td>
       </tr>
       <tr v-if="selectedSeats.length !== 0">
         <td colspan="2">
@@ -96,9 +113,11 @@ export default {
         </td>
         <td colspan="2">${{ totalPrice }}</td>
       </tr>
-    </tbody>
-  </table>
-  <div v-if="selectedSeats.length !== 0"><button @click="unselectAllSeats">Next</button></div>
+      </tbody>
+    </table>
+    <div v-if="selectedSeats.length !== 0">
+      <el-button plain @click="open">Next</el-button>
+    </div>
 </div>
 </div>
 </template>
@@ -134,13 +153,34 @@ export default {
   border-collapse: collapse
   width: 100%
 
+.chosen-seats
+  display: flex
+  flex-direction: column
+  text-align: center
+  justify-content: center
+
 .chosen-seats th,
 .chosen-seats td
   border-bottom: 1px solid $background
   padding: 8px
   text-align: left
 
+.unselected-btn
+  border: 1px solid $background
+  border-radius: 50%
+  width: 30px
+  height: 30px
+
+.el-button
+  border: 1px solid $buttonBorder
+  border-radius: 30px
+  background-color: $buyButton
+  width: 400px
+  height: 80px
+  font-size: 25px
+
 table 
-  margin: 50px
+  margin: 50px 0px
   border-spacing: 10px
+
 </style>
