@@ -1,0 +1,7 @@
+{
+    "movies": [
+      { "id": 1, "title": "a title1", "url": "src/assets/img/images1.jpeg", "date": "01.01.24", "dataArray": [1, 2, 3, 4, 5] },
+      { "id": 2, "title": "a title2", "url": "src/assets/img/images2.jpeg", "date": "01.01.24", "dataArray": [1, 2, 3, 4, 5] },
+      { "id": 3, "title": "a title3", "url": "src/assets/img/images3.jpeg", "date": "01.01.24", "dataArray": [1, 2, 3, 4, 5] }
+    ]
+  }
