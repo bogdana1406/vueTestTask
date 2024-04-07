@@ -1,41 +1,6 @@
-<!-- <script setup>
-const props = defineProps({
-    imgUrl: {
-        type: String,
-        required: true
-    },
-    title: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: String,
-        required: true
-    },
-    time: {
-
-    }
-});
-</script> -->
 <script>
 export default {
   props: {
-    // url: {
-    //   type: String, // Define the type of the prop
-    //   required: true, // Make the prop required if necessary
-    // },
-    // dataArray: {
-    //   type: Array, // Define the type of the prop
-    //   required: true, // Make the prop required if necessary
-    // },
-    // title: {
-    //     type: String,
-    //     required: true
-    // },
-    // date: {
-    //     type: String,
-    //     required: true
-    // },
     dataObject: {
       type: Object,
       required: true,
@@ -46,8 +11,8 @@ export default {
 
 <template>
 <div class="root">
-    <!-- <img :src="url" alt="Image"> -->
-    <div :style="`background-image: url(${dataObject.url})`" class="img"></div>
+    <img :src="dataObject.url" alt="Image">
+    <!-- <div :style="`background-image: url(${dataObject.url})`" class="img"></div> -->
     <div class="main">
         <p class="title">{{ dataObject.title }}</p>
         <p class="date">{{ dataObject.date }}</p>
@@ -65,11 +30,13 @@ export default {
     margin: 10px
 .img
     height: 50vh
-    width: 10%
+    width: 20%
     background-repeat: no-repeat
     background-size: cover
 span
     padding: 10px
+    margin: 10px
+    background-color: $screanColor
 p 
     padding: 20px 
 

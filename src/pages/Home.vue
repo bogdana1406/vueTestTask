@@ -1,7 +1,3 @@
-<!-- <script setup>
-import AppLayout from "../components/AppLayout.vue";
-</script> -->
-
 <script>
 import AppLayout from "../components/AppLayout.vue";
 import {useRootStore} from '../stores/root'
@@ -9,14 +5,6 @@ import {useRootStore} from '../stores/root'
 export default {
   components: {
     AppLayout,
-  },
-  data() {
-    return {
-      parentUrl: 'src/assets/img/images1.jpeg', // The URL you want to pass
-      parentArray: [1, 2, 3, 4, 5], 
-      parentTitle: "Title",
-      parentDate: "01.01.24"
-    };
   },
   setup() {
     const apiStore = useRootStore();
