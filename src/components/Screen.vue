@@ -22,6 +22,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    movie: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
@@ -64,7 +68,7 @@ export default {
 <template>
   <div class="cinema-seats">
     <div class="cinema">
-      <div class="screen">111</div>
+      <div class="screen">{{ movie.title }}</div>
       <table>
       <tbody>
         <tr v-for="(row, rowIndex) in rows" :key="rowIndex">

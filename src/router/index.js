@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
-import Movie from '../pages/Movie.vue'
 import Scene from '../pages/Scene.vue'
 
 const router = createRouter({
@@ -12,12 +11,7 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/movie/:rid',
-      name: 'movie',
-      component: Movie
-    },
-    {
-      path: '/scene',
+      path: '/scene/:id',
       name: 'scene',
       component: Scene
     },

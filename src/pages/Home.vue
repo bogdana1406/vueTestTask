@@ -8,8 +8,7 @@ export default {
   },
   setup() {
     const apiStore = useRootStore();
-    apiStore.getMovies(); // Fetch data when the parent component is mounted
-    console.log("home", apiStore)
+    apiStore.getMovies();
     return { apiStore };
   },
 };

@@ -11,7 +11,9 @@ export default {
 
 <template>
 <div class="root">
-    <img :src="dataObject.url" alt="Image">
+    <RouterLink :to="`/scene/${dataObject.id}`">
+      <img :src="dataObject.url" alt="Image">
+    </RouterLink>
     <!-- <div :style="`background-image: url(${dataObject.url})`" class="img"></div> -->
     <div class="main">
         <p class="title">{{ dataObject.title }}</p>
