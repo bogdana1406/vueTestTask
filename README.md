@@ -22,6 +22,12 @@ npm install
 npm run dev
 ```
 
+### Start JSON-server
+
+```sh
+npx json-server data/db.json
+```
+
 ### Compile and Minify for Production
 
 ```sh
