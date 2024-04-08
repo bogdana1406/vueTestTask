@@ -12,7 +12,7 @@ export default {
 <template>
 <div class="root">
     <RouterLink :to="`/scene/${dataObject.id}`">
-      <img :src="dataObject.url" alt="Image">
+      <img class="img" :src="dataObject.url" alt="Image">
     </RouterLink>
     <!-- <div :style="`background-image: url(${dataObject.url})`" class="img"></div> -->
     <div class="main">
@@ -30,15 +30,26 @@ export default {
     background-color: $background
     padding: 10px
     margin: 10px
+.main
+  display: flax
+  flax-diraction: column
+  justify-content: start
+  padding: 0px 30px
 .img
-    height: 50vh
-    width: 20%
-    background-repeat: no-repeat
-    background-size: cover
+    height: 100%
+    width: 100%
+.title
+    color: $title
+    font-size: 28px
+.date,
+.time,
+.title
+  margin: 0
+  padding: 0
 span
-    padding: 10px
+    padding: 10px 20px
     margin: 10px
-    background-color: $screanColor
+    background-color: $title
 p 
     padding: 20px 
 

@@ -138,6 +138,7 @@ export default {
   display: flex
   text-align: center
   justify-content: space-around
+  line-height: 1
 
 .cinema
   display: flex
@@ -150,10 +151,7 @@ export default {
   height: 50px
   background: $sceneButton
   transform: perspective(10px) rotateX(-1deg)
-  display: flax
-  flax-diraction: column
-  text-align: center
-  ustify-content: center
+  line-height: 2
 
 .chosen-seats table
   border-collapse: collapse
@@ -187,6 +185,9 @@ export default {
 
 .el-icon.hidden
   display: none
+
+.seats-table
+  width: 50%
 
 table 
   margin: 50px 0px

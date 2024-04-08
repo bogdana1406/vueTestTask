@@ -1,7 +1,7 @@
 {
     "movies": [
-      { "id": "1", "title": "a title1", "url": "src/assets/img/images1.jpeg", "date": "01.01.24", "dataArray": [1, 2] },
-      { "id": "2", "title": "a title2", "url": "src/assets/img/images2.jpeg", "date": "01.01.24", "dataArray": [1, 2, 3, 4] },
-      { "id": "3", "title": "a title3", "url": "src/assets/img/images3.jpeg", "date": "01.01.24", "dataArray": [1, 2, 3, 4, 5] }
+      { "id": "1", "title": "The Best Movie1", "url": "src/assets/img/images1.jpeg", "date": "01.01.24", "dataArray": ["13:15", "02:20"] },
+      { "id": "2", "title": "The Best Movie2222", "url": "src/assets/img/images2.jpeg", "date": "01.01.24", "dataArray": ["18:40", "02:30", "03:30", "04:20"] },
+      { "id": "3", "title": "The Best Movie33333", "url": "src/assets/img/images3.jpeg", "date": "01.01.24", "dataArray": ["10:00", "20:00", "13:40", "04:00", "05:50"] }
     ]
 }
