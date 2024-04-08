@@ -18,10 +18,6 @@ const open = () => {
 <script>
 export default {
   props: {
-    takenSeats: {
-      type: Array,
-      default: () => [],
-    },
     movie: {
       type: Object,
       required: true,
@@ -45,6 +41,7 @@ export default {
       const index = this.selectedSeats.findIndex(seat => seat.row === row && seat.column === column);
       if (index === -1) {
         this.selectedSeats.push({ row, column });
+        console.log(this.selectedSeats)
       } else {
         this.selectedSeats.splice(index, 1);
       }
@@ -54,9 +51,6 @@ export default {
     },
     isSeatSelected(row, column) {
       return this.selectedSeats.some(seat => seat.row === row && seat.column === column);
-    },
-    isSeatTaken(row, column) {
-      return this.takenSeats.some(seat => seat.row === row && seat.column === column);
     },
     unselectAllSeats() {
       this.selectedSeats = [];
@@ -74,11 +68,11 @@ export default {
         <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
           <td v-for="(seat, colIndex) in columns" :key="colIndex">
             <button
-              :class="{ selected: isSeatSelected(rowIndex, colIndex), taken: isSeatTaken(rowIndex, colIndex) }"
+              class="seat-btn"
+              :class="{selected: isSeatSelected(rowIndex, colIndex) }"
               @click="toggleSeat(rowIndex, colIndex)"
-              :disabled="isSeatTaken(rowIndex, colIndex)"
             >
-              {{ rowIndex + 1 }} - {{ String.fromCharCode(65 + colIndex) }}
+              taken
             </button>
           </td>
         </tr>
@@ -128,12 +122,13 @@ export default {
 
 <style lang="sass" scoped>
 @import '../assets/styles/main'
-.selected 
+.seat-btn
   background-color: $sceneButton
+  color: $sceneButton
 
-.taken 
+.seat-btn.selected 
   background-color: $takenSit
-  cursor: not-allowed
+  color: $buttonText
 
 .cinema-seats
   margin: 50px
