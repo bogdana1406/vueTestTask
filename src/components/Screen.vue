@@ -41,7 +41,6 @@ export default {
       const index = this.selectedSeats.findIndex(seat => seat.row === row && seat.column === column);
       if (index === -1) {
         this.selectedSeats.push({ row, column });
-        console.log(this.selectedSeats)
       } else {
         this.selectedSeats.splice(index, 1);
       }
@@ -72,7 +71,10 @@ export default {
               :class="{selected: isSeatSelected(rowIndex, colIndex) }"
               @click="toggleSeat(rowIndex, colIndex)"
             >
-              taken
+              <el-icon
+              :size="25"
+              :class="{hidden: !isSeatSelected(rowIndex, colIndex) }"
+              ><User /></el-icon>
             </button>
           </td>
         </tr>
@@ -124,7 +126,8 @@ export default {
 @import '../assets/styles/main'
 .seat-btn
   background-color: $sceneButton
-  color: $sceneButton
+  width: 50px
+  height: 50px
 
 .seat-btn.selected 
   background-color: $takenSit
@@ -147,6 +150,10 @@ export default {
   height: 50px
   background: $sceneButton
   transform: perspective(10px) rotateX(-1deg)
+  display: flax
+  flax-diraction: column
+  text-align: center
+  ustify-content: center
 
 .chosen-seats table
   border-collapse: collapse
@@ -177,6 +184,9 @@ export default {
   width: 400px
   height: 80px
   font-size: 25px
+
+.el-icon.hidden
+  display: none
 
 table 
   margin: 50px 0px
