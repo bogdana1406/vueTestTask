@@ -144,7 +144,7 @@ export default {
   display: flex
   flex-direction: column
   text-align: center
-  justify-content: space-around
+  justify-content: space-between
   
 .screen
   width: 100%
@@ -152,6 +152,8 @@ export default {
   background: $sceneButton
   transform: perspective(10px) rotateX(-1deg)
   line-height: 2
+  text-transform: uppercase
+  letter-spacing: .2rem
 
 .chosen-seats table
   border-collapse: collapse
@@ -185,10 +187,7 @@ export default {
 
 .el-icon.hidden
   display: none
-
-.seats-table
-  width: 50%
-
+  
 table 
   margin: 50px 0px
   border-spacing: 10px
