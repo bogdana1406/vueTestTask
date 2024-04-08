@@ -18,7 +18,7 @@ export default {
     <div class="main">
         <p class="title">{{ dataObject.title }}</p>
         <p class="date">{{ dataObject.date }}</p>
-        <p class="time">CINETECH+ 2D <span v-for="(item, index) in dataObject.dataArray" :key="index">{{ item }}</span> </p>
+        <p class="time">CINETECH+ 2D <RouterLink :to="`/scene/${dataObject.id}`"><span v-for="(item, index) in dataObject.dataArray" :key="index">{{ item }}</span></RouterLink></p>
     </div>
 </div>
 </template>
